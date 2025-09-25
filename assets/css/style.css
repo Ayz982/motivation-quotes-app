@@ -1,0 +1,250 @@
+ * {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ body {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background: url("../img/background1.jpg") no-repeat center center fixed;
+     background-size: cover;
+ }
+
+ body::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.4);
+     z-index: 1;
+ }
+
+ button {
+     cursor: pointer;
+     border: none;
+     background: transparent;
+     color: #FFF;
+ }
+
+ .garis {
+     width: 100%;
+     height: 1px;
+     border-radius: 10px;
+     margin: 15px 0;
+     background-color: #FFF;
+     display: block;
+ }
+
+ /* CSS-2 */
+ .card {
+     position: relative;
+     background: rgba(255, 255, 255, 0.1);
+     width: 400px;
+     padding: 20px;
+     border-radius: 10px;
+     border-top: 1px solid rgba(255, 255, 255, 0.3);
+     border-left: 1px solid rgba(255, 255, 255, 0.3);
+     color: #FFF;
+     box-shadow: inset -3px -3px 8px rgba(255, 255, 255, 0.2),
+         inset 3px 3px 8px rgba(0, 0, 0, 0.3),
+         5px 5px 10px rgba(0, 0, 0, 0.3),
+         -5px -5px 10px rgba(255, 255, 255, 0.1);
+     z-index: 9;
+ }
+
+ /* Цей клас допомагає під час захоплення зображення, приховуючи кнопки */
+ .capture-mode .btnWrap {
+     display: none;
+ }
+
+ .cardHeading {
+     text-align: center;
+     height: 50px;
+     font-weight: 500;
+     font-size: 25px;
+     font-family: 'Single Day', cursive;
+ }
+
+ .quoteWrapper {
+     display: flex;
+     justify-content: center;
+ }
+
+ .quoteWrapper i {
+     font-size: 18px;
+ }
+
+ .quoteWrapper i:first-child {
+     margin: 3px 10px 0 0;
+ }
+
+ .quoteWrapper i:last-child {
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-end;
+     margin: 0 0 3px 10px;
+ }
+
+ /* CSS-3 */
+ .quote {
+     font-weight: 500;
+     text-align: center;
+ }
+
+ .author {
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     gap: 5px;
+     margin: 10px 0;
+ }
+
+ .author span {
+     display: block;
+     width: 30px;
+     height: 1px;
+     background-color: #FFF;
+ }
+
+ .author .name {
+     font-family: 'Sanchez', serif;
+     font-size: 13px;
+ }
+
+ .btnWrap {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+ }
+
+ .btnWrap .btnGrup {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     position: relative;
+ }
+
+ /* CSS-4 */
+ .btnWrap .btnGrup button {
+     width: 35px;
+     height: 35px;
+     border-radius: 50%;
+     background-color: rgb(141, 141, 141);
+ }
+
+ .btnWrap #changeBg {
+     background: linear-gradient(-90deg, rgba(253, 29, 126, 1) 0%, rgba(255, 157, 18, 1) 100%);
+     height: 35px;
+     padding: 0 30px;
+     border-radius: 50px;
+ }
+
+ #alert {
+     position: absolute;
+     left: 68px;
+     top: 0px;
+     font-size: 14px;
+     color: rgb(73, 236, 73);
+     display: none;
+ }
+
+ #alert.show {
+     display: block;
+ }
+
+ /* Modal Styles */
+ .modal-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.7);
+     display: none;
+     justify-content: center;
+     align-items: center;
+     z-index: 10;
+ }
+
+ .modal-overlay.active {
+     display: flex;
+ }
+
+ .modal-content {
+     background-color: #333;
+     color: #FFF;
+     padding: 20px;
+     border-radius: 10px;
+     width: 90%;
+     max-width: 600px;
+     position: relative;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+     max-height: 80vh;
+     /* Зроблено адаптивним */
+     overflow-y: auto;
+     /* Додано прокрутку */
+ }
+
+ .close-btn {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+     font-size: 24px;
+     color: #FFF;
+ }
+
+ .gallery-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+     gap: 10px;
+     margin-top: 20px;
+ }
+
+ .gallery-item {
+     position: relative;
+     width: 100%;
+     height: 100px;
+     overflow: hidden;
+     border-radius: 8px;
+     cursor: pointer;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+ }
+
+ .gallery-item img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.2s;
+ }
+
+ .gallery-item:hover img {
+     transform: scale(1.05);
+ }
+
+ .upload-item {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     background-color: rgba(255, 255, 255, 0.1);
+     color: #FFF;
+     border: 2px dashed rgba(255, 255, 255, 0.3);
+     border-radius: 8px;
+     text-align: center;
+     font-size: 12px;
+     padding: 5px;
+     height: 100px;
+     cursor: pointer;
+ }
+
+ .upload-item i {
+     font-size: 24px;
+     margin-bottom: 5px;
+ }

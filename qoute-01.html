@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qoute</title>
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAI+qW+b1jEw50T8bF+b7+Q" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <!-- HTML2Canvas Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            background-image: url('assets/img/background1.jpg');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h3 class="cardHeading">
+            Цитата дня
+        </h3>
+        <div class="cardContent">
+            <div class="quoteWrapper">
+                <i class="fa-solid fa-quote-left"></i>
+                <h4 class="quote">Якщо ви думаєте, що можете, ви маєте рацію, якщо ви думаєте, що не можете, ви теж
+                    маєте рацію.</h4>
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+            <div class="author">
+                <span></span>
+                <p class="name">Генрі Форд</p>
+            </div>
+            <span class="garis"></span>
+            <div class="btnWrap">
+                <div class="btnGrup">
+                    <button id="sound"><i class="fa-solid fa-volume-high"></i></button>
+                    <button id="copy"><i class="fa-solid fa-copy"></i></button>
+                    <button id="download"><i class="fa-solid fa-download"></i></button>
+                    <i id="alert" class="fa-solid fa-circle-check"></i>
+                </div>
+                <button id="changeBg">Змінити фон</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for background gallery -->
+    <div id="bgModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="close-btn" id="closeModal">&times;</button>
+            <h2>Оберіть новий фон</h2>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+    <!-- Audio element for sound playback -->
+    <audio id="soundEffect" src="assets/audio/sound1.mp3" preload="auto"></audio>
+    <script src="assets/js/script.js" defer></script>
+</body>
+
+</html>
